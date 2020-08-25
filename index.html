@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800"
+    />
+    <title>Document</title>
+
+    <style>
+      .whatsBox {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        max-width: 360px;
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 8px 25px -5px rgba(45, 62, 79, 0.15);
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        background: white;
+        transition: all 0.3s;
+        display: none;
+      }
+
+      .whatsBox::after {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        right: 22px;
+        width: 13px;
+        height: 13px;
+        background: white;
+        transform: rotate(45deg);
+        z-index: -1;
+        border: 1px solid #f5f5f5;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.02);
+        border: none;
+      }
+
+      .whatsBox .boxContent::before .whatsBox .boxContent::after {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        right: 22px;
+        width: 13px;
+        height: 13px;
+        background: white;
+        transform: rotate(45deg);
+        z-index: -1;
+        border: 1px solid #f5f5f5;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.02);
+        background-color: rgba(255, 255, 255, 1);
+        border-color: rgba(255, 255, 255, 1);
+        box-shadow: none;
+        background: white;
+        transform: none;
+        bottom: 0;
+        width: 19px;
+        right: 17px;
+      }
+
+      .whatsDescription {
+        font-family: "Dosis";
+        background-color: #0dc152;
+        color: rgba(255, 255, 255, 1);
+        padding: 6px 40px 6px 20px;
+        border-radius: 6px 6px 0 0;
+      }
+      .whatsappClose {
+        display: block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 0px;
+        right: 18px;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+        color: #fff;
+        font-size: 35px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .whatsappClose:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      .whatsContent {
+        background: #0dc152;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 15px;
+        white-space: nowrap;
+        line-height: 100%;
+        padding: 12px 20px;
+        border-radius: 50px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06),
+          0 2px 32px rgba(0, 0, 0, 0.16);
+        transition: box-shadow 80ms ease-in-out, width 0.4s ease 0.2s;
+      }
+      .whatsClienteContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 40px);
+        padding: 7px;
+      }
+      .whatsClient a {
+        text-decoration: none;
+      }
+      .whatsClienteContent img {
+        width: 60px;
+        height: 60px;
+        margin-right: 8px;
+      }
+
+      .whatsClienteContent p {
+        font-family: "Dosis";
+        color: rgba(85, 85, 85, 1);
+        font-size: 14px;
+        opacity: 0.5;
+      }
+      .whatsClienteContent span {
+        color: #000;
+        font-weight: bold;
+      }
+      .whatsClienteContent:hover {
+        background: #f7f7f7;
+        border-radius: 6px;
+      }
+
+      .whatsClient {
+        width: 100%;
+        max-height: 527px;
+        padding: 13px;
+      }
+      .whatsAtendimento {
+        font-family: "Dosis";
+        color: #000;
+      }
+      .icone_whatsapp {
+        width: 20px;
+        margin-right: 8px;
+      }
+      .whatsContent p {
+        font-family: 'Dosis';
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="whatsBox" id="whatsBox">
+      <div class="boxContent">
+        <div class="whatsDescription">
+          <p>
+            Olá! Clique abaixo para ser atendido via WhatsApp. Em casos
+            emergenciais, sugerimos que entre em contato diretamente com o
+            0000-0000
+          </p>
+        </div>
+        <span class="whatsappClose">&times;</span>
+        <div class="whatsClient">
+          <a href="https://web.whatsapp.com/send?phone=&amp;text=">
+            <div class="whatsClienteContent">
+              <img src="whatsapp-icon.svg" alt="" />
+              <span>
+                <p>
+                  Atendimento via Whatsapp de Segunda à Sexta, das 09:00h às
+                  17:45h. Sábados de 09:00h às 11:45h.
+                </p>
+                <span class="whatsAtendimento"
+                  >Click aqui para ser atendido
+                </span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="whatsContent" onclick="handleToggleWhats()">
+      <img class="icone_whatsapp" src="whatsapp.svg" alt="" />
+      <p>Atendimento via Whatsapp!</p>
+    </div>
+
+    <script>
+      //   document.querySelector('.whatsContent').addEventListener('click', () => {
+      //       const elementToggle = document.querySelector('.whatsBox');
+      //       this.addEventListener('mousedown', () => {
+      //         elementToggle.classList.toggle('boxContent');
+      //       })
+      //   })
+      function handleToggleWhats() {
+        const element = document.querySelector(".whatsBox");
+        const closed = document.querySelector(".whatsappClose");
+        element.classList.add("animate__animated", "animate__slideInUp");
+        element.style.setProperty("--animate-duration", "0.7s");
+        if (element.style.display === "none") {
+          element.style.display = "block";
+          closed.onclick = function () {
+            element.style.display = "none";
+          };
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
